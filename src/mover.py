@@ -7,17 +7,19 @@ def move_turtle():
 
     pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
 
-    # Crea un objeto de tipo Twist
     twist = Twist()
     
-    # Configura las velocidades
-    twist.linear.x = 5.0  # Velocidad lineal hacia adelante
-    twist.angular.z = 0.9  # Velocidad angular (giro)
+    twist.linear.x = 2.5  # Velocidad lineal hacia adelante
+    twist.angular.z = 5  # Velocidad angular (giro)
 
-    # Establece la frecuencia de publicación en 10 Hz (cada 0.1 segundos)
-    rate = rospy.Rate(10)  # 10 Hz
-    # Espera un poco para que el movimiento ocurra
+    rate = rospy.Rate(30)  # 10 Hz
+
+
+
     rospy.sleep(2)
+
+
+
 
     # Detiene la tortuga
     twistd = Twist()
@@ -27,7 +29,7 @@ def move_turtle():
     
     # Publica el mensaje de Twist en el topic "/turtle1/cmd_vel"
     pub.publish(twist)
-    rospy.sleep(5)
+    rospy.sleep(30)
     # Espera hasta el próximo ciclo de publicación
         
     pub.publish(twistd)
