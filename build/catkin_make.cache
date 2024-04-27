@@ -1,0 +1,2 @@
+
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=C:\Renzo_Dragotto\devel -DCMAKE_INSTALL_PREFIX=C:\Renzo_Dragotto\install -G Ninja
